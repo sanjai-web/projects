@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+</head>
+<body><center>
+    <h1>Form Validation</h1></center>
+    <div id="form1">
+    <form id="myform">
+        <h3>Enter your name</h3>
+        <input id="myinput" type="text" autocomplete="off">
+        
+   
+        <h3>Enter your dept.</h3>
+        <input id="myinput2" type="text" autocomplete="off">
+        
+    
+        <h3>Enter your age</h3>
+        <input id="myinput3" type="text" autocomplete="off">
+      
+    
+        <h3>Enter your dob</h3>
+        <input id="myinput4" type="date" autocomplete="off">
+       <br><pre> </pre>
+       <button id="mydetails3">Enter</button>
+    </form>
+</div>
+<center>
+    <div id="displayDetails">
+       
+    </div></center>
+</body>
+
+<style>
+    #myinput,#myinput2,#myinput3,#myinput4{
+        width:30vw;
+        height: 3vh;
+        font-size: 17px;
+        font-weight: 2px;
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+        margin-left: 35vw;
+        max-width: 800px;
+        max-height: 30px;
+
+    }
+    h3{
+        margin-left: 35vw;
+        font-size: 20px;
+        font-variant: small-caps;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+    }
+   #displayDetails{
+        padding-top: 40px;
+        font-size: larger;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+ 
+ 
+    }   
+    button{margin-left: 47vw;
+        background-color: #a85bf1;
+        padding: 10px 25px;
+        font-style: oblique;
+        font-weight: bold;
+        border-radius: 5px;
+        border: none;
+        max-width: 800px;
+        max-height: 50px;
+        
+    }
+  body{
+    background-color: #bbf989;
+  }
+
+</style>
+
+
+
+<script>
+    const form = document.getElementById("myform");
+    const displayDetails = document.getElementById("displayDetails");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+
+        // Get the values from input fields
+        const name = document.getElementById("myinput").value;
+        const dept = document.getElementById("myinput2").value;
+        const age = document.getElementById("myinput3").value;
+        const dob = document.getElementById("myinput4").value;
+
+        // Create a string with the entered details
+        const details = `<p>Name: ${name}</p><p>Dept: ${dept}</p><p>Age: ${age}</p><p>DOB: ${dob}</p>`;
+
+        // Append the details to the displayDetails div
+        displayDetails.innerHTML = details;
+
+        // Clear the input fields
+        document.getElementById("myinput").value = "";
+        document.getElementById("myinput2").value = "";
+        document.getElementById("myinput3").value = "";
+        document.getElementById("myinput4").value = "";
+    });
+
+
+</script>
+</html>
